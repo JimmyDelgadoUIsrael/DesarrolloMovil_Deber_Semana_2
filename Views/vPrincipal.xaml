@@ -70,7 +70,17 @@
                 Text="Verificar" />
 
 
-            <Label x:Name="lblInfo" />
+            <Frame
+                x:Name="frameResultado"
+                Padding="10"
+                BorderColor="Gray"
+                CornerRadius="10"
+                HasShadow="False">
+                <Label
+                    x:Name="lblInfo"
+                    Text=""
+                    TextColor="Black" />
+            </Frame>
 
             <Button
                 x:Name="btnLimpiar"

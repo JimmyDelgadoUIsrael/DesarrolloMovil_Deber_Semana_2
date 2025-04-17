@@ -40,6 +40,29 @@ public partial class vPrincipal : ContentPage
         txtNotaExa2.Text = string.Empty;
         dtpckDate.Date = DateTime.Today;
         lblInfo.Text = string.Empty;
+        frameResultado.BorderColor = Colors.Gray;
+
+    }
+    private void estadoF(string estadoE)
+    {
+        Color colorEstado;
+
+        switch (estadoE)
+        {
+            case "Aprobado":
+                colorEstado = Colors.Green;
+                break;
+            case "Complementario":
+                colorEstado = Colors.Orange;
+                break;
+            case "Reprobado":
+                colorEstado = Colors.Red;
+                break;
+            default:
+                colorEstado = Colors.Gray;
+                break;
+        }
+        frameResultado.BorderColor = colorEstado;
     }
 
     private async void btnVerificar_Clicked(object sender, EventArgs e)
@@ -113,9 +136,9 @@ public partial class vPrincipal : ContentPage
                      $"Nota Final: {notaFinal}\n" +
                      $"Estado: {estado}";
 
+            estadoF(estado);
 
-
-            await DisplayAlert("Sistema Calificaciones", "Nota Final " + notaFinal, "Aceptar");
+            await DisplayAlert("Sistema Calificaciones", "" + lblInfo.Text, "Aceptar");
 
 
 
@@ -131,4 +154,6 @@ public partial class vPrincipal : ContentPage
     {
         Limpiar();
     }
+
+
 }
