@@ -98,7 +98,6 @@ public partial class vPrincipal : ContentPage
             double nota1c = nota1n * 0.3;
             double notaExa1c = notaExa1n * 0.2;
             double notaParcial1 = nota1c + notaExa1c;
-
             double nota2c = nota2n * 0.3;
             double notaExa2c = notaExa2n * 0.2;
             double notaParcial2 = nota2c + notaExa2c;
@@ -119,7 +118,6 @@ public partial class vPrincipal : ContentPage
             }
 
             var estudianteSeleccionado = pckEstudiantes.SelectedItem as Estudiante;
-
             if (estudianteSeleccionado == null)
             {
                 await DisplayAlert("ERROR", "Debe seleccionar un estudiante.", "Aceptar");
@@ -127,7 +125,6 @@ public partial class vPrincipal : ContentPage
             }
 
             string fecha = dtpckDate.Date.ToString();
-
             lblInfo.Text =
                      $"Estudiante: {estudianteSeleccionado.Descripcion}\n" +
                      $"Fecha: {fecha}\n" +
